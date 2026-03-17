@@ -116,7 +116,6 @@ export default function AgentLauncherPage() {
 
   const handleLaunch = () => {
     setLaunching(true)
-    // Mock launch — redirect to history after delay
     setTimeout(() => {
       router.push('/agent/history')
     }, 1200)

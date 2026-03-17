@@ -1,7 +1,11 @@
+'use client'
+
 import Link from 'next/link'
+import { useState } from 'react'
 import { AppShell } from '@/components/layout/app-shell'
 import { Header } from '@/components/layout/header'
 import { NoteFeed } from '@/components/notes/note-feed'
+import { NewAgentReportModal } from '@/components/agent/new-agent-report-modal'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -29,10 +33,10 @@ import {
 } from 'lucide-react'
 
 const STATUS_CONFIG = {
-  completed: { icon: <CheckCircle2 className="w-3.5 h-3.5 text-green-500" />, label: 'Completed' },
+  completed:   { icon: <CheckCircle2 className="w-3.5 h-3.5 text-green-500" />, label: 'Completed' },
   in_progress: { icon: <Loader2 className="w-3.5 h-3.5 text-blue-500 animate-spin" />, label: 'Running' },
-  pending: { icon: <Clock className="w-3.5 h-3.5 text-muted-foreground" />, label: 'Pending' },
-  failed: { icon: <AlertCircle className="w-3.5 h-3.5 text-destructive" />, label: 'Failed' },
+  pending:     { icon: <Clock className="w-3.5 h-3.5 text-muted-foreground" />, label: 'Pending' },
+  failed:      { icon: <AlertCircle className="w-3.5 h-3.5 text-destructive" />, label: 'Failed' },
 }
 
 export default function HomePage() {
@@ -48,6 +52,8 @@ export default function HomePage() {
     .sort((a, b) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime())
     .slice(0, 4)
 
+  const [agentModalOpen, setAgentModalOpen] = useState(false)
+
   const greeting = (() => {
     const hour = new Date().getHours()
     if (hour < 12) return 'Good morning'
@@ -60,6 +66,7 @@ export default function HomePage() {
       <Header />
       <main className="flex-1 overflow-auto">
         <div className="max-w-6xl mx-auto px-6 py-6">
+
           {/* Welcome header */}
           <div className="mb-6">
             <h1 className="text-xl font-semibold text-foreground">
@@ -116,6 +123,7 @@ export default function HomePage() {
 
           {/* Main 2-col layout */}
           <div className="grid grid-cols-3 gap-6">
+
             {/* Left: Note feed (2/3) */}
             <div className="col-span-2">
               <NoteFeed />
@@ -123,6 +131,7 @@ export default function HomePage() {
 
             {/* Right: sidebar panels (1/3) */}
             <div className="space-y-4">
+
               {/* Recent agent reports */}
               <Card>
                 <CardHeader className="pb-2 pt-4 px-4">
@@ -164,12 +173,15 @@ export default function HomePage() {
                     })
                   )}
                   <div className="pt-1">
-                    <Link href="/agent">
-                      <Button variant="outline" size="sm" className="w-full h-7 text-xs gap-1.5">
-                        <Bot className="w-3 h-3" />
-                        New Agent Report
-                      </Button>
-                    </Link>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="w-full h-7 text-xs gap-1.5"
+                      onClick={() => setAgentModalOpen(true)}
+                    >
+                      <Bot className="w-3 h-3" />
+                      New Agent Report
+                    </Button>
                   </div>
                 </CardContent>
               </Card>
@@ -190,7 +202,7 @@ export default function HomePage() {
                       className="flex items-start gap-2 p-2 rounded-md hover:bg-secondary transition-colors"
                     >
                       {note.ticker && (
-                        <span className="ticker text-[10px] font-bold bg-primary/10 text-primary px-1.5 py-0.5 rounded shrink-0 mt-0.5">
+                        <span className="text-[10px] font-bold bg-primary/10 text-primary px-1.5 py-0.5 rounded shrink-0 mt-0.5 font-mono">
                           {note.ticker}
                         </span>
                       )}
@@ -225,12 +237,15 @@ export default function HomePage() {
                       Quick Insight
                     </Button>
                   </Link>
-                  <Link href="/agent">
-                    <Button variant="outline" size="sm" className="w-full justify-start gap-2 h-8 text-xs">
-                      <Bot className="w-3.5 h-3.5" />
-                      Run Agent
-                    </Button>
-                  </Link>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="w-full justify-start gap-2 h-8 text-xs"
+                    onClick={() => setAgentModalOpen(true)}
+                  >
+                    <Bot className="w-3.5 h-3.5" />
+                    Run Agent
+                  </Button>
                   <Link href="/access-requests">
                     <Button variant="outline" size="sm" className="w-full justify-start gap-2 h-8 text-xs">
                       <Users className="w-3.5 h-3.5" />
@@ -244,6 +259,8 @@ export default function HomePage() {
           </div>
         </div>
       </main>
+
+      <NewAgentReportModal open={agentModalOpen} onOpenChange={setAgentModalOpen} />
     </AppShell>
   )
 }

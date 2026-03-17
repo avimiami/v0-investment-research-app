@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { useState } from 'react'
 import {
   FileText,
   Lock,
@@ -14,9 +15,12 @@ import {
   Zap,
   Edit3,
   Eye,
+  Building2,
+  CheckCircle2,
 } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { ShareNoteModal } from '@/components/notes/share-note-modal'
 import { cn } from '@/lib/utils'
 import {
   type Note,
@@ -93,13 +97,15 @@ export function NoteCard({ note, showTier = true, compact = false }: NoteCardPro
   const author = getUserById(note.authorId)
   const isOwn = note.authorId === CURRENT_USER_ID
   const typeIcon = NOTE_TYPE_ICONS[note.type] ?? <FileText className="w-3.5 h-3.5" />
+  const [shareOpen, setShareOpen] = useState(false)
 
   // Get a snippet from sections
   const snippet = Object.values(note.sections).find((s) => s && s.length > 0) ?? ''
   const truncatedSnippet = snippet.slice(0, 160) + (snippet.length > 160 ? '...' : '')
 
   return (
-    <Link href={`/notes/${note.id}`} className="block group">
+    <>
+      <Link href={`/notes/${note.id}`} className="block group">
       <article
         className={cn(
           'bg-card border border-border rounded-lg transition-all duration-150 hover:border-primary/30 hover:shadow-sm',
@@ -195,10 +201,24 @@ export function NoteCard({ note, showTier = true, compact = false }: NoteCardPro
               </span>
             )}
             <span>{formatDate(note.updatedAt)}</span>
+            {isOwn && (
+              <button
+                onClick={(e) => { e.preventDefault(); e.stopPropagation(); setShareOpen(true) }}
+                className="flex items-center gap-1 text-muted-foreground hover:text-foreground transition-colors"
+                title="Share note"
+              >
+                <Share2 className="w-3.5 h-3.5" />
+              </button>
+            )}
           </div>
         </div>
       </article>
     </Link>
+
+    {isOwn && (
+      <ShareNoteModal note={note} open={shareOpen} onOpenChange={setShareOpen} />
+    )}
+  </>
   )
 }
 
@@ -208,6 +228,9 @@ interface RestrictedNoteCardProps {
 }
 
 export function RestrictedNoteCard({ note }: RestrictedNoteCardProps) {
+  const [requested, setRequested] = useState(false)
+  const [paid, setPaid] = useState(false)
+
   return (
     <article className="bg-card border border-border border-dashed rounded-lg p-4 opacity-80">
       {/* Top row */}
@@ -246,13 +269,33 @@ export function RestrictedNoteCard({ note }: RestrictedNoteCardProps) {
           {formatDate(note.updatedAt)} &middot; {note.readTime}m read
         </span>
         <div className="flex items-center gap-2">
-          <Button variant="outline" size="sm" className="h-7 text-xs px-2">
-            Request Access
-          </Button>
-          {note.accessCost && (
-            <Button size="sm" className="h-7 text-xs px-2 bg-amber-500 hover:bg-amber-600 text-white">
+          {requested ? (
+            <span className="flex items-center gap-1 text-xs text-green-600 font-medium">
+              <CheckCircle2 className="w-3.5 h-3.5" /> Requested
+            </span>
+          ) : (
+            <Button
+              variant="outline"
+              size="sm"
+              className="h-7 text-xs px-2"
+              onClick={() => setRequested(true)}
+            >
+              Request Access
+            </Button>
+          )}
+          {note.accessCost && !paid && (
+            <Button
+              size="sm"
+              className="h-7 text-xs px-2 bg-amber-500 hover:bg-amber-600 text-white"
+              onClick={() => setPaid(true)}
+            >
               {note.accessCost} pts
             </Button>
+          )}
+          {paid && (
+            <span className="flex items-center gap-1 text-xs text-amber-600 font-medium">
+              <Zap className="w-3.5 h-3.5" /> Unlocked
+            </span>
           )}
         </div>
       </div>
