@@ -1,0 +1,74 @@
+[
+  {
+    "id": "ind-semis",
+    "name": "Semiconductors",
+    "sector": "Technology",
+    "noteCount": 1,
+    "tickerIds": ["NVDA", "AMD", "AMAT", "LRCX", "ASML"],
+    "description": "Design, manufacturing, and equipment for integrated circuits",
+    "lastUpdated": "2026-03-08"
+  },
+  {
+    "id": "ind-consumer-tech",
+    "name": "Consumer Technology",
+    "sector": "Technology",
+    "noteCount": 2,
+    "tickerIds": ["AAPL"],
+    "description": "Consumer electronics devices, software, and related services",
+    "lastUpdated": "2026-03-10"
+  },
+  {
+    "id": "ind-enterprise-tech",
+    "name": "Enterprise Technology",
+    "sector": "Technology",
+    "noteCount": 1,
+    "tickerIds": ["MSFT", "GOOGL", "ORCL", "SAP"],
+    "description": "Enterprise software, cloud platforms, and business services",
+    "lastUpdated": "2026-03-05"
+  },
+  {
+    "id": "ind-social-media",
+    "name": "Social Media & Digital Advertising",
+    "sector": "Communication Services",
+    "noteCount": 1,
+    "tickerIds": ["META", "SNAP", "PINS"],
+    "description": "Social platforms, digital advertising networks, and creator tools",
+    "lastUpdated": "2026-01-30"
+  },
+  {
+    "id": "ind-ecommerce",
+    "name": "E-commerce & Marketplaces",
+    "sector": "Consumer Discretionary",
+    "noteCount": 1,
+    "tickerIds": ["AMZN", "SHOP", "ETSY"],
+    "description": "Online retail, marketplace platforms, and fulfillment",
+    "lastUpdated": "2026-02-08"
+  },
+  {
+    "id": "ind-networking",
+    "name": "Networking & Infrastructure",
+    "sector": "Technology",
+    "noteCount": 0,
+    "tickerIds": ["ANET", "CSCO"],
+    "description": "Data center networking, switches, and connectivity hardware",
+    "lastUpdated": null
+  },
+  {
+    "id": "ind-utilities",
+    "name": "Utilities & Power Infrastructure",
+    "sector": "Utilities",
+    "noteCount": 0,
+    "tickerIds": ["ETN", "VRT", "GEV", "VST"],
+    "description": "Electric utilities, power equipment, and grid infrastructure",
+    "lastUpdated": null
+  },
+  {
+    "id": "ind-financials",
+    "name": "Financials & Asset Management",
+    "sector": "Financials",
+    "noteCount": 0,
+    "tickerIds": ["BLK", "GS", "JPM"],
+    "description": "Banks, asset managers, and financial services companies",
+    "lastUpdated": null
+  }
+]

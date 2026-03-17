@@ -1,0 +1,191 @@
+[
+  {
+    "id": "agent-1",
+    "taskDescription": "Analyze NVDA competitive positioning vs AMD across training and inference workloads. Include recent earnings data, analyst estimates, and identify key risks to the bull case.",
+    "authorId": "user-1",
+    "ticker": "NVDA",
+    "status": "completed",
+    "createdAt": "2026-03-10T09:00:00Z",
+    "completedAt": "2026-03-10T09:14:00Z",
+    "model": "openrouter/anthropic/claude-3.5-sonnet",
+    "visibility": {
+      "summary": "team",
+      "analysis": "team",
+      "recommendations": "private"
+    },
+    "report": {
+      "title": "NVDA vs AMD: AI Chip Competitive Analysis",
+      "summary": "NVIDIA maintains dominant market leadership in AI training workloads (82% market share) driven by the CUDA ecosystem moat and Blackwell architecture ramp. AMD's MI300X is gaining meaningful inference share but faces structural disadvantages in training. The competitive landscape is shifting faster than consensus models - custom silicon from hyperscalers (Google TPU v5, AWS Trainium 2) represents the most underpriced long-term risk.",
+      "sections": [
+        {
+          "heading": "Training Market: NVDA Dominance Intact",
+          "content": "NVIDIA's position in the AI training market remains structurally sound. The CUDA software ecosystem, with 4M+ developer installations and 3,000+ compatible libraries, creates switching costs that cannot be replicated on a 2-3 year horizon. The H100/H200/B100 product family provides a coherent upgrade path that enterprise IT buyers prefer over AMD's less mature ROCm stack.\n\nKey data points: (1) NVDA holds 82% of top-500 AI cluster deployments as of Q1 2026; (2) ROCm developer activity growing at 45% YoY but from a small base; (3) Major cloud providers offer H100/H200 with 6-8 week lead times vs. MI300X availability at <2 weeks - demand differential is real.",
+          "visibility": "team"
+        },
+        {
+          "heading": "Inference: AMD Making Real Inroads",
+          "content": "The inference story is more nuanced. AMD's MI300X offers compelling TCO for large language model inference at scale due to the 192GB HBM3 configuration (vs. NVDA H100's 80GB). Meta, Microsoft Azure, and Groq have disclosed MI300X deployments for production inference.\n\nHowever, NVDA's TensorRT-LLM optimization toolkit and the NIM microservices platform are closing the software gap. NVDA's inference performance on the latest benchmarks shows the gap has narrowed from 35% in mid-2025 to approximately 15% as of Q1 2026 on normalized $/token metrics.",
+          "visibility": "team"
+        },
+        {
+          "heading": "Custom Silicon: The Underpriced Risk",
+          "content": "Google's TPU v5 now handles an estimated 70% of internal AI workloads. Amazon's Trainium 2 chips are deployed across 30% of internal ML inference at AWS. Microsoft's Maia 2 is in production for specific Copilot inference workloads.\n\nThe financial implication: every percentage point of compute that shifts to custom silicon from NVDA hardware represents approximately $400M in annual NVDA revenue at risk. At current trajectory, custom silicon could represent 25-30% of the total addressable AI compute market by 2028, up from an estimated 15% today.",
+          "visibility": "team"
+        },
+        {
+          "heading": "Recommendations & Price Targets",
+          "content": "NVDA: Overweight, PT $220 (12-month). The Rubin architecture announcement accelerates the technology roadmap and extends the competitive moat window. Key risk: custom silicon penetration accelerating faster than consensus models. AMD: Neutral, PT $165. MI300X traction is real but insufficient to change the competitive hierarchy in the near term. The stock is pricing in too much training market penetration that is unlikely to materialize.\n\nKey catalysts to watch: (1) AMD MI400 specs announcement (H2 2026); (2) Hyperscaler capex guidance for 2027; (3) ROCm developer survey data (Q2 2026).",
+          "visibility": "private"
+        }
+      ],
+      "sources": [
+        "NVDA Q4 2026 Earnings Call Transcript",
+        "AMD Q4 2025 Earnings Call Transcript",
+        "MLCommons MLPerf Benchmark Results H1 2026",
+        "Morgan Stanley AI Infrastructure Survey Q1 2026",
+        "Semianalysis Custom Silicon Report March 2026"
+      ]
+    },
+    "reviews": [
+      {
+        "id": "review-1",
+        "userId": "user-1",
+        "action": "approved_with_comments",
+        "comment": "Good analysis overall. The custom silicon section is the most valuable part - I want to dig into the $400M/percentage point calculation methodology. The training market share figure of 82% needs a citation - I'll verify against the MLPerf data myself. Approved for team sharing.",
+        "followUpItems": ["Verify 82% training share figure vs. MLPerf", "Request MI400 specs timeline from AMD IR"],
+        "createdAt": "2026-03-10T16:30:00Z"
+      }
+    ],
+    "researchNotes": [
+      {
+        "id": "rn-1",
+        "userId": "user-1",
+        "note": "Follow up: the $400M per percentage point figure is based on an estimated $40B TAM for AI chips in 2026 - worth checking against current consensus. Also: check if the MI300X TCO advantage holds at the new HBM3e pricing levels.",
+        "createdAt": "2026-03-11T09:00:00Z"
+      }
+    ]
+  },
+  {
+    "id": "agent-2",
+    "taskDescription": "Summarize the key macro risks for equity markets in H1 2026. Focus on Fed policy, credit conditions, and geopolitical factors. Generate a risk matrix with probability and impact assessments.",
+    "authorId": "user-2",
+    "ticker": null,
+    "status": "completed",
+    "createdAt": "2026-03-05T14:00:00Z",
+    "completedAt": "2026-03-05T14:22:00Z",
+    "model": "openrouter/openai/gpt-4o",
+    "visibility": {
+      "summary": "team",
+      "analysis": "team",
+      "recommendations": "team"
+    },
+    "report": {
+      "title": "H1 2026 Macro Risk Assessment for Equity Markets",
+      "summary": "The macro environment for equities in H1 2026 is characterized by a 'higher for longer' rate environment conflicting with elevated equity valuations. The three primary risk vectors are: (1) Fed policy surprise (hawkish), (2) Credit market deterioration (CRE/HY spread widening), and (3) Geopolitical escalation (tariffs, energy supply). Base case: equity markets range-bound with elevated volatility. Bull case: re-acceleration narrative absorbs rate concerns. Bear case: credit event triggers de-risking.",
+      "sections": [
+        {
+          "heading": "Risk Matrix Overview",
+          "content": "HIGH PROBABILITY / HIGH IMPACT: Fed holding rates above 5% through Q3 2026 (65% probability) - would compress P/E multiples by 1-2 turns on the S&P 500. HIGH PROBABILITY / MEDIUM IMPACT: Dollar strength continuation (70% probability) - headwind for multinational earnings, particularly tech. MEDIUM PROBABILITY / HIGH IMPACT: CRE credit event triggering regional bank stress (30% probability) - the 2023 playbook, but larger refinancing wall in 2026. LOW PROBABILITY / EXTREME IMPACT: Geopolitical escalation leading to energy supply shock (15% probability) - inflation re-acceleration scenario.",
+          "visibility": "team"
+        },
+        {
+          "heading": "Recommended Positioning",
+          "content": "Given the risk matrix, the portfolio should tilt toward: (1) Quality over growth - FCF yield screens over P/E expansion plays; (2) Short duration - reduce long-duration growth names at 40x+ forward P/E; (3) Domestic over international - dollar strength headwinds for EM; (4) Defensive cyclicals - healthcare services, select utilities (power grid theme).",
+          "visibility": "team"
+        }
+      ],
+      "sources": [
+        "Federal Reserve March 2026 FOMC Minutes",
+        "BofA Fund Manager Survey March 2026",
+        "GS Global Equity Strategy March 2026",
+        "JP Morgan Credit Markets Monitor Q1 2026"
+      ]
+    },
+    "reviews": [
+      {
+        "id": "review-2",
+        "userId": "user-2",
+        "action": "approved",
+        "comment": "Solid risk framing. The CRE probability at 30% feels right - Lena's credit note from last week supports this. Distributing to team.",
+        "followUpItems": [],
+        "createdAt": "2026-03-05T17:00:00Z"
+      },
+      {
+        "id": "review-3",
+        "userId": "user-2",
+        "action": "follow_up",
+        "comment": "Revisiting: the CRE probability should be updated given the new CBRE data showing $180B of maturities in H2 2026. Bumping to 40%.",
+        "followUpItems": ["Update CRE probability in next macro review"],
+        "createdAt": "2026-03-12T11:00:00Z"
+      }
+    ],
+    "researchNotes": []
+  },
+  {
+    "id": "agent-3",
+    "taskDescription": "Create a competitive landscape overview for the cloud infrastructure market (AWS, Azure, GCP) with focus on AI workload market share and pricing dynamics.",
+    "authorId": "user-3",
+    "ticker": null,
+    "status": "in_progress",
+    "createdAt": "2026-03-15T10:00:00Z",
+    "completedAt": null,
+    "model": "openrouter/google/gemini-pro-1.5",
+    "visibility": {
+      "summary": "team",
+      "analysis": "private",
+      "recommendations": "private"
+    },
+    "report": null,
+    "reviews": [],
+    "researchNotes": []
+  },
+  {
+    "id": "agent-4",
+    "taskDescription": "Screen for semiconductor equipment companies with exposure to AI capex cycle. Analyze EV/EBITDA multiples vs. historical ranges and growth rates.",
+    "authorId": "user-1",
+    "ticker": null,
+    "status": "completed",
+    "createdAt": "2026-02-28T11:00:00Z",
+    "completedAt": "2026-02-28T11:18:00Z",
+    "model": "openrouter/anthropic/claude-3.5-sonnet",
+    "visibility": {
+      "summary": "shared",
+      "analysis": "shared",
+      "recommendations": "private"
+    },
+    "report": {
+      "title": "Semi Equipment AI Capex Screen: Valuation & Positioning",
+      "summary": "Semiconductor equipment companies with AI capex exposure are trading at a wide range of multiples - from ASML at 35x forward EBITDA to AMAT at 18x. The valuation dispersion creates selective opportunities. Key screen output: AMAT and LRCX appear most attractively valued relative to AI exposure and backlog growth. ASML remains expensive but irreplaceable.",
+      "sections": [
+        {
+          "heading": "Valuation Screen Results",
+          "content": "Company | EV/EBITDA (fwd) | Rev Growth (2026E) | AI Exposure %\nASML | 35x | +18% | 65%\nAMAT | 18x | +22% | 55%\nLRCX | 16x | +19% | 45%\nKLA | 22x | +15% | 40%\nTER | 14x | +12% | 30%\n\nThe AMAT/LRCX discount to ASML is partially justified (ASML's monopoly on EUV) but has widened beyond historical norms. The 15-20% discount is more appropriate than the current 45-50% discount.",
+          "visibility": "shared"
+        }
+      ],
+      "sources": [
+        "Bloomberg consensus estimates March 2026",
+        "Company investor presentations",
+        "Semi equipment channel checks February 2026"
+      ]
+    },
+    "reviews": [
+      {
+        "id": "review-4",
+        "userId": "user-1",
+        "action": "needs_revision",
+        "comment": "The screen is useful but needs to incorporate the new ASML order book data from their Jan earnings. The AI exposure percentages also need methodology notes - I used revenue mix but should clarify that.",
+        "followUpItems": ["Add ASML order book data", "Add methodology note to AI exposure % column"],
+        "createdAt": "2026-02-28T14:00:00Z"
+      }
+    ],
+    "researchNotes": [
+      {
+        "id": "rn-2",
+        "userId": "user-1",
+        "note": "Reminder: re-run this screen after ASML Q1 earnings in April. Also consider adding Onto Innovation (ONTO) and Cohu - they have emerging AI test exposure.",
+        "createdAt": "2026-03-01T09:30:00Z"
+      }
+    ]
+  }
+]

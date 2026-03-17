@@ -1,0 +1,26 @@
+[
+  {
+    "id": "team-alpha",
+    "name": "Tech & Growth",
+    "description": "Coverage of technology and high-growth equities",
+    "color": "#4F6EF7",
+    "memberIds": ["user-1", "user-2", "user-3"],
+    "noteCount": 142
+  },
+  {
+    "id": "team-beta",
+    "name": "Macro & Credit",
+    "description": "Global macro strategy and credit markets",
+    "color": "#22C0A0",
+    "memberIds": ["user-4", "user-5"],
+    "noteCount": 87
+  },
+  {
+    "id": "team-gamma",
+    "name": "Quant Strategies",
+    "description": "Quantitative models and systematic approaches",
+    "color": "#A855F7",
+    "memberIds": ["user-6"],
+    "noteCount": 54
+  }
+]

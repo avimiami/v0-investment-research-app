@@ -1,0 +1,67 @@
+[
+  {
+    "id": "theme-ai-infra",
+    "name": "AI Infrastructure Supercycle",
+    "shortName": "AI Infra",
+    "description": "The multi-year buildout of AI compute, networking, and power infrastructure driven by hyperscaler and enterprise AI investment",
+    "status": "active",
+    "conviction": "high",
+    "noteCount": 1,
+    "relatedTickers": ["NVDA", "AMD", "ANET", "ETN", "VRT"],
+    "relatedThemes": ["theme-power-grid"],
+    "tags": ["AI", "Capex Cycle", "Data Centers", "Semiconductors"],
+    "lastUpdated": "2026-03-01"
+  },
+  {
+    "id": "theme-power-grid",
+    "name": "Power Grid & Energy Transition",
+    "shortName": "Power Grid",
+    "description": "Modernization of power infrastructure catalyzed by AI data center demand, electrification, and energy transition policies",
+    "status": "active",
+    "conviction": "high",
+    "noteCount": 1,
+    "relatedTickers": ["ETN", "VRT", "GEV", "VST"],
+    "relatedThemes": ["theme-ai-infra"],
+    "tags": ["Power", "Infrastructure", "Nuclear", "Grid"],
+    "lastUpdated": "2026-02-20"
+  },
+  {
+    "id": "theme-deglobal",
+    "name": "Deglobalization & Supply Chain",
+    "shortName": "Deglobal",
+    "description": "Reshoring of critical manufacturing, tariff-driven supply chain restructuring, and regional trade bloc formation",
+    "status": "developing",
+    "conviction": "medium",
+    "noteCount": 0,
+    "relatedTickers": ["HON", "EMR", "ROK"],
+    "relatedThemes": ["theme-ai-infra"],
+    "tags": ["Tariffs", "Reshoring", "Supply Chain", "Manufacturing"],
+    "lastUpdated": null
+  },
+  {
+    "id": "theme-private-credit",
+    "name": "Private Credit Expansion",
+    "shortName": "Private Credit",
+    "description": "Growth of non-bank lending, direct lending funds, and the blurring of public/private credit markets",
+    "status": "active",
+    "conviction": "medium",
+    "noteCount": 0,
+    "relatedTickers": ["BLK", "APO", "ARES"],
+    "relatedThemes": [],
+    "tags": ["Credit", "Private Markets", "Yield", "BDC"],
+    "lastUpdated": null
+  },
+  {
+    "id": "theme-consumer-health",
+    "name": "Consumer Health & GLP-1",
+    "shortName": "GLP-1 / Health",
+    "description": "GLP-1 drug adoption reshaping healthcare economics, consumer spending patterns, and downstream industries",
+    "status": "active",
+    "conviction": "medium",
+    "noteCount": 0,
+    "relatedTickers": ["LLY", "NVO", "AbbVie"],
+    "relatedThemes": [],
+    "tags": ["GLP-1", "Healthcare", "Obesity", "Consumer"],
+    "lastUpdated": null
+  }
+]

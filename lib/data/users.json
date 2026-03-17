@@ -1,0 +1,62 @@
+[
+  {
+    "id": "user-1",
+    "name": "Sarah Chen",
+    "email": "sarah.chen@alphafund.com",
+    "initials": "SC",
+    "teamId": "team-alpha",
+    "role": "Senior Analyst",
+    "points": 150,
+    "avatar": null
+  },
+  {
+    "id": "user-2",
+    "name": "Marcus Webb",
+    "email": "m.webb@alphafund.com",
+    "initials": "MW",
+    "teamId": "team-alpha",
+    "role": "Portfolio Manager",
+    "points": 320,
+    "avatar": null
+  },
+  {
+    "id": "user-3",
+    "name": "Priya Nair",
+    "email": "p.nair@alphafund.com",
+    "initials": "PN",
+    "teamId": "team-alpha",
+    "role": "Analyst",
+    "points": 80,
+    "avatar": null
+  },
+  {
+    "id": "user-4",
+    "name": "James Holbrook",
+    "email": "j.holbrook@alphafund.com",
+    "initials": "JH",
+    "teamId": "team-beta",
+    "role": "Senior Analyst",
+    "points": 210,
+    "avatar": null
+  },
+  {
+    "id": "user-5",
+    "name": "Lena Fischer",
+    "email": "l.fischer@alphafund.com",
+    "initials": "LF",
+    "teamId": "team-beta",
+    "role": "Macro Strategist",
+    "points": 175,
+    "avatar": null
+  },
+  {
+    "id": "user-6",
+    "name": "Ryan Cho",
+    "email": "r.cho@alphafund.com",
+    "initials": "RC",
+    "teamId": "team-gamma",
+    "role": "Quant Analyst",
+    "points": 95,
+    "avatar": null
+  }
+]
