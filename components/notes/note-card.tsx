@@ -39,8 +39,6 @@ const NOTE_TYPE_ICONS: Record<string, React.ReactNode> = {
   quick: <Zap className="w-3.5 h-3.5" />,
 }
 
-import { Building2 } from 'lucide-react'
-
 const TIER_CONFIG: Record<
   AccessTier,
   { label: string; color: string; dotColor: string; icon: React.ReactNode }
